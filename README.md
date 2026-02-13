@@ -31,9 +31,100 @@ Sample Preview:
 - Outlier Detection-Used conditional formatting on total_revenue to see if there are any unrealsitic spikes (Select total_revenue column > Home tab > Conditional Formatting > Highlight Cell Rules > Greater than > 5000 > Light Red Fill with Dark Red Text > OK)
 - Standardization-Used find & replace to ensure payment_method names are consistent.
 
-#### Phase 2: Transformation with SQL
-**Loaded my cleaned Excel data into a SQL Server database.
+#### Phase 2: Data Integration
+** To simulate a production environment, I migrated the cleaned dataset from a flat CSV file into a SQLite Relational Database
+- Engine-SQLAlchemy & SQLite
+```Python
+import pandas as pd
+from sqlalchemy import create_engine, text
+import os
+```
+- Process-Developed a Python script to automate the ETL (Extract, Transform, Load) process
+```Python
+file_path = r'C:\Users\Judith\Downloads\amazon_sales_dataset1.csv'
+if os.path.exists(file_path):
+    print("File found! Loading data...")
+    df = pd.read_csv(file_path)
+    
+    # Create the SQL Database
+    engine = create_engine('sqlite:///amazon_data.db')
+    df.to_sql('sales', con=engine, index=False, if_exists='replace')
+    print("Success! Your database 'amazon_data.db' is ready.")
+else:
+    print("File NOT found. Please check the path and try again.")
+File found! Loading data...
+Success! Your database 'amazon_data.db' is ready.
+```
 
+#### Phase 3: Transformation with SQL (Exploratory Data Analysis EDA)
+1. Create the Table Schema/Structure
+```sql
+create_table_query = """
+CREATE TABLE IF NOT EXISTS amazon_sales (
+    order_id INT PRIMARY KEY,
+    order_date DATE,
+    product_id INT,
+    product_category VARCHAR(50),
+    price DECIMAL(10,2),
+    discount_percent INT,
+    quantity_sold INT,
+    customer_region VARCHAR(50),
+    payment_method VARCHAR(50),
+    rating DECIMAL(2,1),
+    review_count INT,
+    discounted_price DECIMAL(10,2),
+    total_revenue DECIMAL(10,2)
+);
+"""
+with engine.connect() as connection:
+    connection.execute(text("DROP TABLE IF EXISTS amazon_sales"))
+    connection.execute(text(create_table_query))
+
+print("Success! The 'amazon_sales' table structure has been created.")
+Success! The 'amazon_sales' table structure has been created.
+```
+2. Key Insight Queries
+   
+ ~ Top 5 Regions by Revenue
+```sql
+region_query = """
+SELECT 
+    customer_region, 
+    ROUND(SUM(total_revenue), 2) AS total_regional_revenue
+FROM amazon_sales
+GROUP BY customer_region
+ORDER BY total_regional_revenue DESC
+LIMIT 5;
+"""
+top_regions = pd.read_sql(region_query, engine)
+top_regions
+```
+  
+  ~ Category Performance
+```sql
+category_performance_query = """
+SELECT 
+    product_category,
+    COUNT(order_id) AS total_orders,
+    SUM(quantity_sold) AS units_sold,
+    ROUND(SUM(total_revenue), 2) AS total_revenue,
+    ROUND(AVG(rating), 2) AS average_rating
+FROM amazon_sales
+GROUP BY product_category
+ORDER BY total_revenue DESC;
+"""
+category_stats = pd.read_sql(category_performance_query, engine)
+category_stats
+```
+#### Phase 4: Save Transformed SQL Table
+**  Saved the transformed SQL Table back into a high-quality CSV file that Power BI can easily read.
+```sql
+final_df = pd.read_sql("SELECT * FROM amazon_sales", engine)
+final_df.to_csv('amazon_sales_for_powerbi.csv', index=False)
+print("Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.")
+Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
+```
+#### Phase 5: Visualization-Dashboard in Power BI
 
 
 
