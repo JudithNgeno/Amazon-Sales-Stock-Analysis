@@ -2,7 +2,20 @@
 Excel + Python + SQL + Power BI Project | Retail Sales Data | From Raw Data to Business Insights
 
 ## Table of Contents
-[Project Overview](Project-Overview)
+* [Project Overview](Project-Overview)
+* [Tools & Technologies](Tools--Technologies)
+* [Dataset Overview](Dataset-Overview)
+* [Data Cleaning, Transformation & Visualization Process](Data-Cleaning,Transformation--Visualization-Process)
+* *[Phase 1: Cleaning in Excel](Phase-1-Cleaning-in-Excel)
+* *[Phase 2: Data Integration (ETL)](Phase-2-Data-Integration-(ETL))
+* *[Phase 3: Transformation with SQL (Exploratory Data Analysis EDA)](Phase-3-Transformation-with-SQL (Exploratory Data Analysis EDA))
+* *[Phase 4: Transformed SQL Table](Phase-4-Transformed-SQL-Table)
+* *[Phase 5: Transformation & Visualization in Power BI](Phase-5-Transformation--Visualization-in-Power-BI)
+* **[DAX Measures](DAX-Measures)
+* **[Visualization](Visualization)
+* [Key Insights & Recommendations](Key-Insights--Recommendations)
+* [Summary Table](Summary-Table)
+* [Data Source](Data-Source)
 
 ### Project Overview
 This project demonstrates a full data pipeline from raw data to actionable insights. Using a dataset of 50,000 Amazon sales records, I performed data cleaning in Excel, advanced transformations using SQL, and built an interactive dashboard in Power BI to track KPIs such as total revenue, regional performance, and product category trends.
@@ -35,7 +48,7 @@ Sample Preview:
 - Outlier Detection-Used conditional formatting on total_revenue to see if there are any unrealsitic spikes (Select total_revenue column > Home tab > Conditional Formatting > Highlight Cell Rules > Greater than > 5000 > Light Red Fill with Dark Red Text > OK)
 - Standardization-Used find & replace to ensure payment_method names are consistent.
 
-#### Phase 2: Data Integration
+#### Phase 2: Data Integration (ETL)
 ** To simulate a production environment, I migrated the cleaned dataset from a flat CSV file into a SQLite Relational Database
 - Engine-SQLAlchemy & SQLite
 ```Python
@@ -120,7 +133,7 @@ ORDER BY total_revenue DESC;
 category_stats = pd.read_sql(category_performance_query, engine)
 category_stats
 ```
-#### Phase 4: Save Transformed SQL Table
+#### Phase 4: Transformed SQL Table
 **  Saved the transformed SQL Table back into a high-quality CSV file that Power BI can easily read.
 ```sql
 final_df = pd.read_sql("SELECT * FROM amazon_sales", engine)
@@ -128,7 +141,9 @@ final_df.to_csv('amazon_sales_for_powerbi.csv', index=False)
 print("Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.")
 Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 ```
-#### Phase 5: Visualization-Dashboard in Power BI
+#### Phase 5: Transformation & Visualization in Power BI
+##### DAX Measures
+##### Visualization
 ** The Power BI dashboard include the following visuals:
 - 📇Cards of the Total Revenue, Total Quantity Sold and Average Order Value
 - 🗺️Map of the Total Revenue by Customer Region
@@ -153,7 +168,7 @@ Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 - Insight: The Middle East is the most profitable region with £8.30M revenue, contributing the highest share of the £32.87M total revenue.
 - Business Answer: Marketing spend is currently most effective in the Middle East. For the business to grow, we should either double down on this region or analyze why the North America and Europe regions are trailing behind in total spend.
 
-#### 🛠️ Summary Table
+#### Summary Table
 | Product Category | Total Revenue | Avg. Rating | Total Units Sold |
 | :--- | :--- | :--- | :--- |
 | Beauty | £5,550,624.97 | 2.99 | 25,422 |
