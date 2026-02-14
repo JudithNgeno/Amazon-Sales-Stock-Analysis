@@ -157,7 +157,7 @@ Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 <img width="1372" height="744" alt="Screenshot 2026-02-14 124013" src="https://github.com/user-attachments/assets/74083323-f8f4-4ded-927f-7f8432a5990f" />
 
 
-#### Key Insights and Recommendations
+#### Key Insights & Recommendations
 1. 📇Revenue Distribution-The "Big Three" Categories.
 - Insight: Beauty, Books, and Fashion are almost tied for the lead, but Beauty is the top revenue generator at £5.55M.
 - Business Answer: While we have a balanced portfolio, marketing efforts should lean into the Beauty category as it currently has the highest volume of sales (25,422 units).
