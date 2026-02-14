@@ -3,19 +3,19 @@ Excel + Python + SQL + Power BI Project | Retail Sales Data | From Raw Data to B
 
 ## Table of Contents
 * [Project Overview](#Project-Overview)
-* [Tools & Technologies](Tools--Technologies)
-* [Dataset Overview](Dataset-Overview)
-* [Data Cleaning, Transformation & Visualization Process](Data-Cleaning,Transformation--Visualization-Process)
-* *[Phase 1: Cleaning in Excel](Phase-1-Cleaning-in-Excel)
-* *[Phase 2: Data Integration (ETL)](Phase-2-Data-Integration-(ETL))
-* *[Phase 3: Transformation with SQL (Exploratory Data Analysis EDA)](Phase-3-Transformation-with-SQL (Exploratory Data Analysis EDA))
-* *[Phase 4: Transformed SQL Table](Phase-4-Transformed-SQL-Table)
-* *[Phase 5: Transformation & Visualization in Power BI](Phase-5-Transformation--Visualization-in-Power-BI)
-* **[DAX Measures](DAX-Measures)
+* [Tools & Technologies](#Tools--Technologies)
+* [Dataset Overview](#Dataset-Overview)
+* [Data Cleaning, Transformation & Visualization Process](#Data-Cleaning,Transformation--Visualization-Process)
+* *[Phase 1: Cleaning in Excel](#Phase-1-Cleaning-in-Excel)
+* *[Phase 2: Data Integration (ETL)](#Phase-2-Data-Integration-(ETL))
+* *[Phase 3: Transformation with SQL (Exploratory Data Analysis EDA)](#Phase-3-Transformation-with-SQL (Exploratory Data Analysis EDA))
+* *[Phase 4: Transformed SQL Table](#Phase-4-Transformed-SQL-Table)
+* *[Phase 5: Transformation & Visualization in Power BI](#Phase-5-Transformation--Visualization-in-Power-BI)
+* **[DAX Measures](#DAX-Measures)
 * **[Visualization](Visualization)
-* [Key Insights & Recommendations](Key-Insights--Recommendations)
-* [Summary Table](Summary-Table)
-* [Data Source](Data-Source)
+* [Key Insights & Recommendations](#Key-Insights--Recommendations)
+* [Summary Table](#Summary-Table)
+* [Data Source](#Data-Source)
 
 ### Project Overview
 This project demonstrates a full data pipeline from raw data to actionable insights. Using a dataset of 50,000 Amazon sales records, I performed data cleaning in Excel, advanced transformations using SQL, and built an interactive dashboard in Power BI to track KPIs such as total revenue, regional performance, and product category trends.
