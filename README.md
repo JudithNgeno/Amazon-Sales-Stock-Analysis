@@ -142,19 +142,58 @@ print("Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.")
 Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 ```
 #### Phase 5: Transformation & Visualization in Power BI
-##### DAX Measures
+##### DAX 
+** Calender Table
+```DAX
+Calendar Table = 
+VAR MinDate = MIN(amazon_sales_for_powerbi[order_date])
+VAR MaxDate = MAX(amazon_sales_for_powerbi[order_date])
+RETURN ADDCOLUMNS (
+    CALENDAR(MinDate, MaxDate),
+    "Year", YEAR([Date]),
+    "Month Name1", FORMAT([Date], "MMMM"),
+    "Month Number", MONTH([Date]),
+    "Quarter", "Q" & FORMAT([Date], "Q"),
+    "Weekday", FORMAT([Date], "dddd")
+)
+```
+** Measures
+1. Total Revenue
+```DAX
+Total Revenue = SUM(amazon_sales_for_powerbi[total_revenue])
+```
+2. Total Quantity Sold
+```DAX
+Total Items = SUM(amazon_sales_for_powerbi[quantity_sold])
+```
+3. Average Order Value (AOV)
+```DAX
+Average Order Value = DIVIDE([Total Revenue], COUNT(amazon_sales_for_powerbi[order_id]))
+```
+4. Average Customer Rating
+```DAX
+Avg Rating = AVERAGE(amazon_sales_for_powerbi[rating])
+```
+5. Average Discount Percentage
+```DAX
+Avg Discount % = AVERAGE(amazon_sales_for_powerbi[discount_percent])
+```
 
 ##### Visualization
 ** The Power BI dashboard include the following visuals:
-- 📇Cards of the Total Revenue, Total Quantity Sold and Average Order Value
-- 🗺️Map of the Total Revenue by Customer Region
-- 🍩Donut of the Total Revenue by Payment Method
-- 📈Line Chart of the Total Quantity Sold by Month and Year
-- 📊Column Chart of the Sum of Quantity Sold by Product Category
+- 📇KPI Overview (Cards)
+  - Total Revenue
+  - Total Quantity Sold
+  - Average Order Value
+  - Average Customer Rating
+  - Average Discount Percentage
+- 🗺️Revenue by Customer Region Map
+- 🍩Total Revenue by Payment Method Donut
+- 📈Total Quantity Sold by Month and Year Line Chart
+- 📊Sum of Quantity Sold by Product Category Column Chart
 - ⏳Date Range, Customer Region and Product Category slicers
 
-
-<img width="1372" height="744" alt="Screenshot 2026-02-14 124013" src="https://github.com/user-attachments/assets/74083323-f8f4-4ded-927f-7f8432a5990f" />
+<img width="1379" height="745" alt="Screenshot 2026-02-14 152432" src="https://github.com/user-attachments/assets/ae80b83d-b64f-4a38-bd8e-d4fa6dd42e6d" />
 
 
 #### Key Insights & Recommendations
@@ -168,6 +207,9 @@ Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 3. 🗺️Regional Revenue Pillars
 - Insight: The Middle East is the most profitable region with £8.30M revenue, contributing the highest share of the £32.87M total revenue.
 - Business Answer: Marketing spend is currently most effective in the Middle East. For the business to grow, we should either double down on this region or analyze why the North America and Europe regions are trailing behind in total spend.
+4. ⚖️Discount Efficiency: The 20% Threshold
+- The Insight: The data shows diminishing returns on high discounts. Orders with a 20% discount move the most volume (3.03 units avg.), but increasing the discount to 30% actually sees a slight drop in average units sold.
+- Business Answer: To maximize profit margins, the business should cap standard promotions at 20%. Steeper discounts (30%+) do not appear to drive enough additional volume to justify the loss in margin.
 
 #### Summary Table
 | Product Category | Total Revenue | Avg. Rating | Total Units Sold |
