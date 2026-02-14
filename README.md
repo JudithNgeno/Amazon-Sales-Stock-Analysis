@@ -207,7 +207,7 @@ Avg Discount % = AVERAGE(amazon_sales_for_powerbi[discount_percent])
 3. 🗺️Regional Revenue Pillars
 - Insight: The Middle East is the most profitable region with £8.30M revenue, contributing the highest share of the £32.87M total revenue.
 - Business Answer: Marketing spend is currently most effective in the Middle East. For the business to grow, we should either double down on this region or analyze why the North America and Europe regions are trailing behind in total spend.
-4. ⚖️Discount Efficiency: The 20% Threshold
+4. ⚖️Discount Efficiency-The 20% Threshold
 - The Insight: The data shows diminishing returns on high discounts. Orders with a 20% discount move the most volume (3.03 units avg.), but increasing the discount to 30% actually sees a slight drop in average units sold.
 - Business Answer: To maximize profit margins, the business should cap standard promotions at 20%. Steeper discounts (30%+) do not appear to drive enough additional volume to justify the loss in margin.
 
