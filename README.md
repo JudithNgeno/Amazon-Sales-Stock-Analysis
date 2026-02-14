@@ -5,7 +5,7 @@ Excel + Python + SQL + Power BI Project | Retail Sales Data | From Raw Data to B
 * [Project Overview](#Project-Overview)
 * [Tools & Technologies](#Tools--Technologies)
 * [Dataset Overview](#Dataset-Overview)
-* [Data Cleaning Transformation & Visualization Process](#Data-Cleaning-Transformation--Visualization-Process)
+* [Data Cleaning,Transformation & Visualization Process](#Data-Cleaning-Transformation--Visualization-Process)
 * *[Phase 1: Cleaning in Excel](#Phase-1-Cleaning-in-Excel)
 * *[Phase 2: Data Integration (ETL)](#Phase-2-Data-Integration-ETL)
 * *[Phase 3: Transformation with SQL (Exploratory Data Analysis EDA)](#Phase-3-Transformation-with-SQL-Exploratory-Data-Analysis-EDA)
@@ -40,7 +40,7 @@ Sample Preview:
 | 4 | 17/04/2022 | 2522 | Books | 371.95 | 15 | 4 | Middle East | UPI | 5.0 | 212 | 316.16 | 1264.64 |
 | 5 | 13/03/2022 | 1717 | Beauty | 201.68 | 0 | 4 | Middle East | UPI | 4.6 | 308 | 201.68 | 806.72 |
 
-### Data Cleaning, Transformation and Visualization Process
+### Data Cleaning, Transformation & Visualization Process
 
 #### Phase 1: Cleaning in Excel
 - Date Formatting-Ensured the order_date column is recognized as a short date (Select order_date column > Go to Format > Number > Date/ Short Date in the dropdown)
