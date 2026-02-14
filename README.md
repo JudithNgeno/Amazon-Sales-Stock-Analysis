@@ -125,6 +125,68 @@ print("Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.")
 Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 ```
 #### Phase 5: Visualization-Dashboard in Power BI
+** The Power BI dashboard include the following visuals:
+- 📇Cards of the Total Revenue, Total Quantity Sold and Average Order Value
+- 🗺️Map of the Total Revenue by Customer Region
+- 🍩Donut of the Total Revenue by Payment Method
+- 📈Line Chart of the Total Quantity Sold by Month and Year
+- 📊Column Chart of the Sum of Quantity Sold by Product Category
+- ⏳Date Range, Customer Region and Product Category slicers
+
+
+<img width="1372" height="744" alt="Screenshot 2026-02-14 124013" src="https://github.com/user-attachments/assets/74083323-f8f4-4ded-927f-7f8432a5990f" />
+
+
+#### Key Insights and Recommendations
+1. 📇Revenue Distribution-The "Big Three" Categories.
+- Insight: Beauty, Books, and Fashion are almost tied for the lead, but Beauty is the top revenue generator at £5.55M.
+- Business Answer: While we have a balanced portfolio, marketing efforts should lean into the Beauty category as it currently has the highest volume of sales (25,422 units).
+2. 📈Sales Trends-Stability Over Seasonality
+  - Insight: Monthly revenue remains remarkably stable, hovering between  £1.3M and £1.4M consistently throughout 2022 and 2023.
+  - Business Answer: There are no drastic "seasonal slumps", suggesting that the products sold are "Evergreen" (essential goods) rather than highly seasonal items. The highest peak occured in January 2023 (£1.46M).
+    ** Since January is typically a strong month this suggests a "New Year, New Me" buying trend or successful post-holiday clearance sales. We should recommend increased inventory levels in late December to prepare for this surge.
+3. 🗺️Regional Revenue Pillars
+- Insight: The Middle East is the most profitable region with £8.30M revenue, contributing the highest share of the £32.87M total revenue.
+- Business Answer: Marketing spend is currently most effective in the Middle East. For the business to grow, we should either double down on this region or analyze why the North America and Europe regions are trailing behind in total spend.
+
+#### 🛠️ Summary Table
+| Product Category | Total Revenue | Avg. Rating | Total Units Sold |
+| :--- | :--- | :--- | :--- |
+| Beauty | £5,550,624.97 | 2.99 | 25,422 |
+| Books | £5,484,863.03 | 3.02 | 25,065 |
+| Fashion | £5,480,123.34 | 2.99 | 25,089 |
+| Home & Kitchen | £5,473,132.55 | 3.00 | 24,743 |
+| Electronics | £5,470,594.03 | 2.99 | 24,898 |
+| Sports | £5,407,235.82 | 3.00 | 24,753 |
+
+#### Data Source
+[Download Here](https://www.kaggle.com/datasets/aliiihussain/amazon-sales-dataset)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
