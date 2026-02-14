@@ -2,7 +2,7 @@
 Excel + Python + SQL + Power BI Project | Retail Sales Data | From Raw Data to Business Insights
 
 ## Table of Contents
-* [Project Overview](Project-Overview)
+* [Project Overview](###Project-Overview)
 * [Tools & Technologies](Tools--Technologies)
 * [Dataset Overview](Dataset-Overview)
 * [Data Cleaning, Transformation & Visualization Process](Data-Cleaning,Transformation--Visualization-Process)
