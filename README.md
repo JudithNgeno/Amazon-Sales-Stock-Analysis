@@ -1,12 +1,16 @@
 # Amazon-Sales-Analysis
-Excel + SQL + Power BI Project | Retail Sales Data | From Raw Data to Business Insights
+Excel + Python + SQL + Power BI Project | Retail Sales Data | From Raw Data to Business Insights
+
+## Table of Contents
+[Project Overview](Project-Overview)
 
 ### Project Overview
 This project demonstrates a full data pipeline from raw data to actionable insights. Using a dataset of 50,000 Amazon sales records, I performed data cleaning in Excel, advanced transformations using SQL, and built an interactive dashboard in Power BI to track KPIs such as total revenue, regional performance, and product category trends.
 
 ### Tools & Technologies 
-- SQL
 - Excel
+- SQLite
+- Python
 - Power BI
 - Jupyter Notebook for SQL querying
 
