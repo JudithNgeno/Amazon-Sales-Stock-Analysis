@@ -143,6 +143,7 @@ Export Complete! Use 'amazon_sales_for_powerbi.csv' in Power BI.
 ```
 #### Phase 5: Transformation & Visualization in Power BI
 ##### DAX Measures
+
 ##### Visualization
 ** The Power BI dashboard include the following visuals:
 - 📇Cards of the Total Revenue, Total Quantity Sold and Average Order Value
