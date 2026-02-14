@@ -12,7 +12,7 @@ Excel + Python + SQL + Power BI Project | Retail Sales Data | From Raw Data to B
 * *[Phase 4: Transformed SQL Table](#Phase-4-Transformed-SQL-Table)
 * *[Phase 5: Transformation & Visualization in Power BI](#Phase-5-Transformation--Visualization-in-Power-BI)
 * **[DAX Measures](#DAX-Measures)
-* **[Visualization](Visualization)
+* **[Visualization](#Visualization)
 * [Key Insights & Recommendations](#Key-Insights--Recommendations)
 * [Summary Table](#Summary-Table)
 * [Data Source](#Data-Source)
